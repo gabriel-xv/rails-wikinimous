@@ -1,0 +1,12 @@
+<div class="container">
+  <ul>
+    <% @articles.each do |article| %>
+      <%= link_to(article) do %>
+        <li><%= article.title %> -  <%= link_to "Delete",
+              article_path(article),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
